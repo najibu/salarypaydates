@@ -18,6 +18,7 @@ The recommended way to get a working copy of this project is to clone the reposi
 and manually invoke `composer` using the shipped `composer.phar`:
 
     cd my/project/dir
+    git clone git@github.com:najibu/salarypaydates.git
     cd salarypaydates
     php composer.phar self-update
     php composer.phar install
