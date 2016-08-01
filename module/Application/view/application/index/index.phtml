@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1>Expense Date Calculator</h1>
+        <pre>
+- The normal base salaries are paid on the last day of the month unless
+that day is a Saturday or a Sunday (weekend).
+- On the 1st and 15th of each month the expenses are paid for the
+previous fortnight, unless those days are on a weekend, in which case
+they are paid on the first Monday after that date.
+        </pre>
+
+        By default this app calculates expense dates for next year. But you can change the year as well! <br /> Try:
+        <a href="<?php echo $this->url('home', array('year'=> date('Y') + 2)); ?>"><?php echo date('Y') + 2; ?></a> or
+        <a href="<?php echo $this->url('home', array('year'=> date('Y') + 50)); ?>"><?php echo date('Y') + 50; ?></a>
+        <table class="table table-bordered">
+            <tr>
+                <th>Month</th>
+                <th>First Expenses Day</th>
+                <th>Second Expenses Day</th>
+                <th>Salary Day</th>
+            </tr>
+            <?php foreach ($this->expenseDates as $key => $date): ?>
+            <tr>
+                <td><?php echo $date['month']; ?></td>
+                <td><?php echo $date['firstExpensesDay']; ?></td>
+                <td><?php echo $date['secondExpensesDay']; ?></td>
+                <td><?php echo $date['salaryDay']; ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+</div>
